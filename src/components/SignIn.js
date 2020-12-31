@@ -105,7 +105,7 @@ class SignIn extends React.Component {
         >
           <div className={classes.paper}>
             <Typography component="h1" variant="h3" align="left">
-              Sign in
+              Sign in test
             </Typography>
             <ValidatorForm
               className={classes.form}
