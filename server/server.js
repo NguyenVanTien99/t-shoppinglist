@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(
   cors({
     origin: [
-      'http://localhost:3000','https://memoranda-todo.herokuapp.com/'
+      'http://localhost:3000','https://t-shoppinglist.herokuapp.com/'
     ],
     credentials: true
   })
