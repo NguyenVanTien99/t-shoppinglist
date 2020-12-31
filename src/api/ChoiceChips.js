@@ -2,8 +2,8 @@ import { Chip, Typography } from "@material-ui/core";
 import React, { Fragment } from "react";
 
 const chips = [
-  { id: 1, label: "Personal" },
-  { id: 2, label: "Shopping" },
+  { id: 1, label: "Foods" },
+  { id: 2, label: "drinks" },
   { id: 3, label: "Home" },
   { id: 4, label: "Work" },
   { id: 5, label: "Other" },
