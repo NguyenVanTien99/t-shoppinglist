@@ -19,7 +19,7 @@ const Main = (props) => {
   const [step, setStep] = useState(0);
   const [todos, setTodos] = useState([]);
   const [confidence, setConfidence] = useState(0);
-  const steps = ["Upload Image", "Edit Tods", "Summary"];
+  const steps = ["Upload Image", "Edit Items", "Summary"];
   const getStepContent = (step) => {
     switch (step) {
       case 0:

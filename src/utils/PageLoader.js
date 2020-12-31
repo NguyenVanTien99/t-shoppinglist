@@ -8,7 +8,7 @@ const PageLoader = () => {
 	return (
 		<Fragment>
 			<Box display="flex" justifyContent="center" margin="50px 0">
-				<PropagateLoader color="#6200EE" />
+				<PropagateLoader color="#000000" />
 			</Box>
 		</Fragment>
 	)

@@ -57,7 +57,7 @@ const UploadImage = (props) => {
           component="label"
           onChange={handleChangeFile}
         >
-          Upload Image
+          Choose Image
           <input type="file" style={{ display: "none" }} />
         </Button>
       </Box>

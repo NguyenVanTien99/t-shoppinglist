@@ -22,8 +22,8 @@ const AddTodoButton = (props) => {
 			className={classes.button}
 			onClick={() => { props.setisOpenDlg(true); }}
 			size="small"
-			color="primary"
-			startIcon={<AddIcon />}>Add Todo</Button>
+			color="secondary"
+			startIcon={<AddIcon />}>Add Items</Button>
 	)
 }
 

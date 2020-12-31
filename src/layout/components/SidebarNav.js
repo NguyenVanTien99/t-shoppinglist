@@ -1,5 +1,6 @@
 import { Button, Hidden, List, ListItem } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/Dashboard';
+import ShareIcon from '@material-ui/icons/Share';
 import ArchievedIcom from '@material-ui/icons/ArchiveOutlined'
 import InputIcon from '@material-ui/icons/Input';
 import AccountBox from "@material-ui/icons/AccountBox";
@@ -30,10 +31,10 @@ const styles = theme =>({
         fontWeight: theme.typography.fontWeightMedium
       },
       active:{
-        color: theme.palette.primary.main,
+        color: theme.palette.secondary.main,
         fontWeight: theme.typography.fontWeightMedium,
         '& $icon': {
-        color: theme.palette.primary.main
+        color: theme.palette.secondary.main
         }
       }
 
@@ -56,15 +57,20 @@ const CustomRouterLink = forwardRef((props, ref) => (
         icon:<DashboardIcon/>
     },
     {
-        title:'Archieved Todos',
+        title:'Archieved Items',
         href:'/view-archieved',
         icon:<ArchievedIcom/>
+    },
+    {
+        title:'Share your list',
+        href:'/share',
+        icon:<ShareIcon/>
     },
     {
         title:'Account',
         href:'/account',
         icon:<AccountBox/>
-    }
+    },
 ];
 
 class SidebarNav extends React.Component{

@@ -129,7 +129,7 @@ const TodoCard = (props) => {
           <Grid container spacing={1}>
             <Grid item xs={6}>
               <Typography variant="h5" component="h1">
-                Title of todo{" "}
+                Title of items{" "}
               </Typography>
             </Grid>
             <Grid item xs={2}>
@@ -190,7 +190,7 @@ const TodoCard = (props) => {
           Back
         </Button>
         <Button onClick={addTodos} variant="contained" color="primary">
-          Add Todos
+          Add items
         </Button>
       </Box>
     </Fragment>

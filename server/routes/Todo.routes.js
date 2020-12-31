@@ -31,6 +31,15 @@ router.post('/deleteTodo',(req,res) => {
 router.get('/getTodos/:username',(req,res) => {
     const {username} = req.params;
     Todo.find({username,completed:false}).then( todos => {
+        res.status(200).json({'message':'get todo successfully',todos})
+    }).catch(err => {
+        res.status(422).json(`error:${err.message}`);
+    })
+})
+
+router.get('/shareTodos/:username',(req,res) => {
+    const {username} = req.params;
+    Todo.find({username,completed:false}).then( todos => {
         res.status(200).json({'message':'todo created successfully',todos})
     }).catch(err => {
         res.status(422).json(`error:${err.message}`);
@@ -40,7 +49,7 @@ router.get('/getTodos/:username',(req,res) => {
 router.get('/getArchivedTodos/:username',(req,res) => {
     const {username} = req.params;
     Todo.find({username,completed:true}).then( todos => {
-        res.status(200).json({'message':'todo created successfully',todos})
+        res.status(200).json({'message':'get todo share successfully',todos})
     }).catch(err => {
         res.status(422).json(`error:${err.message}`);
     })

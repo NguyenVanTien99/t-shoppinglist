@@ -2,8 +2,8 @@ import { Box, Typography } from "@material-ui/core";
 import ArrowForward from "@material-ui/icons/ArrowForward";
 import { makeStyles } from "@material-ui/styles";
 import React, { Fragment } from "react";
-import Converted from "../../../images/converted_image.png";
-import PlainImage from "../../../images/todo_image_tobeconverted.png";
+import Converted from "../../../images/convert_img.png";
+import PlainImage from "../../../images/item_use_convert.png";
 
 const useStyles = makeStyles((theme) => ({
   imageConatiner: {
@@ -27,7 +27,7 @@ const UsageDisplay = () => {
   const classes = useStyles();
   return (
     <Fragment>
-    <Typography color="secondary" align="center" className={classes.headerTitle} variant="h5">Tadaaa...!! Upload your Images and convert them into todos</Typography>
+    <Typography color="secondary" align="center" className={classes.headerTitle} variant="h5">Upload your Images and convert them into todos</Typography>
     <Box display="flex" justifyContent="space-around" alignItems="center">
       <div className={classes.imageConatiner}>
         <img

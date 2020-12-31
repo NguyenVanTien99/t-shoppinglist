@@ -44,7 +44,7 @@ const ArchievedTodosMain = () => {
     return (
       <div style={{ padding: 16 }}>
         <Typography variant="h5" component="h1">
-          Archieved Todos
+          Archieved Items
         </Typography>
         {todos.length > 0 ? (
           <ArchievedTodoList
@@ -54,7 +54,7 @@ const ArchievedTodosMain = () => {
         ) : (
           <EmptyData
             height={500}
-            message="No Archieved todos "
+            message="No Archieved Items "
           ><HighLighOff style={{fontSize:150}}></HighLighOff></EmptyData>
         )}
       </div>

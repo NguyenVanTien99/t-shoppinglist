@@ -4,7 +4,7 @@ import React from "react";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
 import TodoApi from "../api/TodoApi";
 import history from "../utils/history";
-import Image from "../images/todo_image2.jpg";
+import Image from "../images/bg2.gif";
 
 
 const styles = (theme) => ({
@@ -22,7 +22,7 @@ const styles = (theme) => ({
     alignItems: "center",
   },
   paperconatiner: {
-    padding: theme.spacing(4, 2),
+    padding: theme.spacing(12, 4),
     opacity: 0.8,
   },
   form: {
@@ -50,6 +50,9 @@ class SignUp extends React.Component {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
+  handleOnChangeVerifyPass = () =>{
+
+  }
   handleOnSubmit = (event) => {
     event.preventDefault();
     this.setState({ submitted: true });
@@ -85,6 +88,7 @@ class SignUp extends React.Component {
                 <Grid container spacing={2}>
                   <Grid item xs={12}>
                     <TextValidator
+                      color="secondary"
                       autoComplete="name"
                       name="name"
                       variant="outlined"
@@ -100,6 +104,7 @@ class SignUp extends React.Component {
                   </Grid>
                   <Grid item xs={12}>
                     <TextValidator
+                      color="secondary"
                       name="email"
                       variant="outlined"
                       fullWidth
@@ -114,6 +119,7 @@ class SignUp extends React.Component {
                   </Grid>
                   <Grid item xs={12}>
                     <TextValidator
+                      color="secondary"
                       name="password"
                       variant="outlined"
                       type="password"
@@ -126,6 +132,7 @@ class SignUp extends React.Component {
                     errorMessages={["please enter the password"]}
                     />
                   </Grid>
+
                   <Grid item xs={12}>
                     <InputLabel className={classes.errorString} error={true}>
                       {this.state.submitted && this.state.errorMessage}
@@ -137,14 +144,14 @@ class SignUp extends React.Component {
                   type="submit"
                   fullWidth
                   variant="contained"
-                  color="primary"
+                  color="secondary"
                   className={classes.submit}
                 >
                   Sign Up
                 </Button>
-                <Grid container justify="flex-end">
+                <Grid container justify="flex-end" color="secondary">
                   <Grid item>
-                    <Link href="/signin">Already have an account? Sign In</Link>
+                    <Link color="secondary" href="/signin">Already have an account? Sign In</Link>
                   </Grid>
                 </Grid>
               </ValidatorForm>

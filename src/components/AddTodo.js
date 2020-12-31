@@ -1,4 +1,5 @@
 import { Button, Grid, TextField } from "@material-ui/core";
+import { green } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/core/styles";
 import React, { useState } from "react";
 import TodoSnackBar from "./snackbar/TodoSnackBar";
@@ -7,11 +8,15 @@ const useStyles = makeStyles((theme) => ({
   addTodoContainer: {
     margin: "16px 0",
     padding: theme.spacing(1.5),
-    borderColor: theme.palette.primary.main,
-    border: "2px dashed",
+    borderColor: '#5bc8ac',
+    border: "2px double ",
     borderRadius: theme.spacing(0.5),
   },
+  secondary: {
+    backgroundColor: '#5bc8ac'
+  },
 }));
+
 const AddTodo = (props) => {
   const initialToDoState = {
     id: null,
@@ -48,18 +53,20 @@ const AddTodo = (props) => {
   const handleClose =() => {
     setOpen(false)
   }
+
   const classes = useStyles();
   const [todo, setTodo] = useState(initialToDoState);
   const [open,setOpen] = useState(false)
+  
   return (
     <div className={classes.addTodoContainer}>
-      <Grid container spacing={2}>
+      <Grid container spacing={4}>
         <Grid item xs={10} md={11}>
-          <TextField id="title" name="title"value={todo.title} onKeyDown={handleKeyDown}onChange={handleInputChange} fullWidth placeholder="Add Todo here"></TextField>
+          <TextField color="secondary" id="title" name="title" value={todo.title} onKeyDown={handleKeyDown} onChange={handleInputChange} fullWidth placeholder=" Quick Add Item Here"></TextField>
         </Grid>
         <Grid item xs={2} md={1}>
-          <Button onClick={handleAddClick} variant="contained" fullWidth color="secondary">
-            Add
+          <Button onClick={handleAddClick} variant="contained" color="secondary" fullWidth className={classes.secondary} >
+            Add items
           </Button>
         </Grid>
       </Grid>

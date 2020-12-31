@@ -14,11 +14,13 @@ import PasswordIcon from "@material-ui/icons/VpnKey";
 import { withStyles } from "@material-ui/styles";
 import React from "react";
 import { TextValidator, ValidatorForm } from "react-material-ui-form-validator";
-import Image from "../images/todo_image1.jpg";
+import Image from "../images/bg3.gif";
 import TodoApi from "../api/TodoApi";
 import history from '../utils/history';
+// import { red, blue } from 'material-ui/colors'
 
 import ClipLoader from "react-spinners/ClipLoader";
+
 
 const styles = (theme) => ({
   root: {
@@ -26,7 +28,7 @@ const styles = (theme) => ({
   },
   body: {
     backgroundColor: theme.palette.common.white,
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(${Image})`,
+    backgroundImage: `url(${Image})`,
     backgroundSize: 'cover',
     backgroundPosition:'center'
   },
@@ -93,7 +95,6 @@ class SignIn extends React.Component {
     return (
       <Grid container component="main" className={classes.root}>
         <CssBaseline />
-        <Grid item xs={false} sm={false} md={8} className={classes.body} />
         <Grid
           item
           xs={12}
@@ -105,13 +106,14 @@ class SignIn extends React.Component {
         >
           <div className={classes.paper}>
             <Typography component="h1" variant="h3" align="left">
-              Sign in test
+              Sign in
             </Typography>
             <ValidatorForm
               className={classes.form}
               onSubmit={this.handleOnSubmit}
             >
               <TextValidator
+                color="secondary"
                 id="email"
                 variant="outlined"
                 fullWidth
@@ -134,11 +136,12 @@ class SignIn extends React.Component {
                 value={this.state.email}
                 validators={["required", "isEmail"]}
                 errorMessages={[
-                  "this field is required",
+                  "This field is required",
                   "Please enter valid Email",
                 ]}
               />
               <TextValidator
+                color="secondary"
                 id="password"
                 variant="outlined"
                 fullWidth
@@ -160,7 +163,7 @@ class SignIn extends React.Component {
                 }
                 value={this.state.password}
                 validators={["required"]}
-                errorMessages={["please enter the password"]}
+                errorMessages={["Please enter the password"]}
               />
               <InputLabel className={classes.errorString} error={true}>
                 {this.state.submitted && this.state.errorMessage}
@@ -174,7 +177,7 @@ class SignIn extends React.Component {
                 type="submit"
                 fullWidth
                 variant="contained"
-                color="primary"
+                color="secondary"
                 className={classes.submit}
               >
                 {
@@ -183,7 +186,7 @@ class SignIn extends React.Component {
               </Button>
               <Grid container>
                 <Grid item>
-                  <Link href="/signup" variant="body2">
+                  <Link href="/signup" variant="body2" color="secondary">
                     Sign Up ?
                   </Link>
                 </Grid>
@@ -191,6 +194,7 @@ class SignIn extends React.Component {
             </ValidatorForm>
           </div>
         </Grid>
+        <Grid item xs={false} sm={false} md={8} className={classes.body} />
       </Grid>
     );
   }

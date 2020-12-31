@@ -175,7 +175,7 @@ const ToDoForm = (props) => {
         <Grid item xs={12}>
           <Box display="flex" flexDirection="row-reverse">
             <Button type="submit" variant="contained" color="primary">
-              {props.isEditing ? "Update Todo" : "Add Todo"}
+              {props.isEditing ? "Update Items" : "Add Items"}
             </Button>
             <Button
               onClick={handleDialogClose}

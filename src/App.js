@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard';
 import RouteWithLayout from './utils/RouteWithLayout';
 import Main from './layout/Main'
 import Account from './components/Account';
+import Share from './components/Share';
 import ArchievedTodosMain from './components/ArchievedTodos/ArchievedTodosMain'
 
 import theme from './theme/theme';
@@ -34,6 +35,11 @@ function App() {
               exact
               path="/view-archieved"
               component={ArchievedTodosMain} layout={Main}
+            ></RouteWithLayout>
+            <RouteWithLayout
+              exact
+              path="/share"
+              component={Share} layout={Main}
             ></RouteWithLayout>
             <Redirect exact from="/" to="/dashboard" />
         </Switch>

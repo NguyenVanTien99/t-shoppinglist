@@ -9,12 +9,8 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import DeleteIcon from "@material-ui/icons/Delete";
-import { makeStyles } from "@material-ui/styles";
-import SearchIcon from "@material-ui/icons/Search";
-import Tooltip from '@material-ui/core/Tooltip';
-import EditIcon from "@material-ui/icons/Edit";
 
+import { makeStyles } from "@material-ui/styles";
 //Thirdparty packages
 import Moment from "react-moment";
 
@@ -43,12 +39,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ToDoList = (props) => {
+const ToDoListShare = (props) => {
   const [search, setSearch] = useState(null);
-  const searchTodo = (event) => {
-    let keyword = event.target.value;
-    setSearch(keyword);
-  };
   const classes = useStyles();
 
   return (
@@ -57,27 +49,10 @@ const ToDoList = (props) => {
         disableTypography={true}
         title={
           <Typography variant="h5" component="h1">
-            Your List Items
+            List Items
           </Typography>
         }
-        action={
-          <Fragment>
-            <TextField
-              label="Search Your Todo"
-              onChange={(e) => searchTodo(e)}
-              size="small"
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment>
-                    <IconButton>
-                      <SearchIcon />
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </Fragment>
-        }
+      
       ></CardHeader>
       <CardContent className={classes.cardContent}>
       <TableContainer className={classes.tableContainer}>
@@ -85,7 +60,7 @@ const ToDoList = (props) => {
           <TableHead className={classes.tableHeader}>
             <TableRow>
               <TableCell className={classes.headerCell} align="left">
-                Title
+                Name
               </TableCell>
               <TableCell
                 className={classes.headerCell}
@@ -99,12 +74,6 @@ const ToDoList = (props) => {
               </TableCell>
               <TableCell className={classes.headerCell} align="left">
                 Due date
-              </TableCell>
-              <TableCell className={classes.headerCell} align="left">
-                Actions
-              </TableCell>
-              <TableCell className={classes.headerCell}>
-                Archive
               </TableCell>
             </TableRow>
           </TableHead>
@@ -128,42 +97,15 @@ const ToDoList = (props) => {
                   <TableCell align="left" className={classes.headerCell}>
                     <PriorityMenuItem
                       todo={todo}
-                      handlePriorityChange={props.changePriority}
                     />
                   </TableCell>
                   <TableCell className={classes.headerCell} >
                     <StatusMenuItem
                       todo={todo}
-                      handleStatusChange={props.changeStatus}
                     />
                   </TableCell>
                   <TableCell  className={classes.headerCell} align="left">
                     <Moment format="Do MMM YYYY">{todo.dueDate}</Moment>
-                  </TableCell>
-
-                  <TableCell  className={classes.headerCell} align="left">
-                    <IconButton
-                      size="small"
-                      className={classes.icon}
-                      onClick={() => props.editTodo(todo)}
-                    >
-                      <EditIcon />
-                    </IconButton>
-                    <IconButton
-                      size="small"
-                      onClick={() => props.deleteTodo(todo._id)}
-                    >
-                      <DeleteIcon style={{ color: "#d11a2a" }} />
-                    </IconButton>
-                  </TableCell>
-
-                  <TableCell className={classes.headerCell} component="th" scope="todo">
-                    <Tooltip title="Mark as Completed" arrow>
-                      <Checkbox
-                        inputProps={{ "aria-label": "primary checkbox" }}
-                        onChange={() => props.changeCompleted(todo._id, true)}
-                      />
-                    </Tooltip>
                   </TableCell>
                 </TableRow>
               ))}
@@ -175,4 +117,4 @@ const ToDoList = (props) => {
   );
 };
 
-export default ToDoList;
+export default ToDoListShare;

@@ -235,7 +235,7 @@ function Dashboard() {
           ) : (
             <EmptyData
               height={500}
-              message="Create your first Todo"
+              message="Create your first List"
               setisOpenDlg={setisOpenDlg}
             ><AddIcon style={{fontSize:150}}onClick={() => setisOpenDlg(true)}></AddIcon></EmptyData>
           )

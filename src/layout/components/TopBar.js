@@ -6,10 +6,12 @@ import InputIcon from '@material-ui/icons/Input'
 import MenuIcon from '@material-ui/icons/Menu'
 import { Cookies } from 'react-cookie';
 import history from "../../utils/history";
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 const cookie = new Cookies();
 const styles = theme  => ({
     root: {
-        boxShadow: 'none'
+        boxShadow: 'none',
+        color:'white'
     },
     flexGrow: {
         flexGrow: 1
@@ -32,11 +34,11 @@ class TopBar extends React.Component{
         const {classes , onSidebarOpen} = this.props
         return(
             <AppBar 
-            className ={classes.root}>
-                <Toolbar>
+            style={{ background: '#98dbc6' }}>
+                <Toolbar >
                     <RouterLink to="/" className ={classes.linkText}>
                         <Typography gutterBottom = {false}  component="h1" variant="h4">
-                            Memoranda
+                        <ShoppingCartIcon />   Shopping List
                         </Typography>
                     </RouterLink>
                     <div className ={classes.flexGrow} />
