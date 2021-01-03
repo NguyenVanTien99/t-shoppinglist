@@ -3,6 +3,8 @@ const router = express.Router();
 
 const Todo = require('../models/Todo')
 
+// create a item
+
 router.post('/addTodo',(req,res) => {
     const toDo = new Todo(req.body);
     toDo.save().then( todo => {
@@ -12,6 +14,8 @@ router.post('/addTodo',(req,res) => {
     })
 })
 
+// delete todo
+
 router.post('/addBulkTodos',(req,res) => {
     Todo.insertMany(req.body).then( todos => {
         res.status(200).json({'message':'todo deleted successfully',todos})
@@ -20,6 +24,8 @@ router.post('/addBulkTodos',(req,res) => {
         res.status(422).json(`error:${err.message}`);
     })
 })
+
+
 router.post('/deleteTodo',(req,res) => {
     const { _id } = req.body;
     Todo.deleteOne({_id}).then( todo => {
@@ -28,6 +34,8 @@ router.post('/deleteTodo',(req,res) => {
         res.status(422).json(`error:${err.message}`);
     })
 })
+
+// get todo
 router.get('/getTodos/:username',(req,res) => {
     const {username} = req.params;
     Todo.find({username,completed:false}).then( todos => {

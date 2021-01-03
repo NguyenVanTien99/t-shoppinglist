@@ -23,6 +23,7 @@ const UserSchema = new Schema({
       }
 })
 
+// mã hoá password
 
 UserSchema.pre('save',function(next){
     if(this.isNew || this.isModified('password')){
