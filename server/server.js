@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 const cookieParser = require('cookie-parser');
 const app = express();
 
-const dbUrl = 'mongodb+srv://Tien:12312323Aa@learningmongodb.5u9yi.mongodb.net/ShoppingList?retryWrites=true&w=majority'
+const dbUrl = 'Your link connect database'
 app.use(bodyParser.json());
 app.use(
   cors({
